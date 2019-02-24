@@ -51,6 +51,10 @@ class InteractionBarComponent extends React.Component {
 
     if (words[0][0] === COMMAND_INIT) {
       const command = words[0].substr(1);
+
+      if (command === '')
+        return this.props.errorAction(chatError.STARWARS.INVALID_INPUT);
+
       switch (command) {
         case chatCommand.TIME:
           return this.props.botReply(moment().format(customConfig.DATE_FORMAT));
@@ -59,7 +63,7 @@ class InteractionBarComponent extends React.Component {
         case chatCommand.STARWARS:
           {
             const query = words.splice(1).join(WORD_SEPARATOR);
-            if(query === '')
+            if (query === '')
               return this.props.errorAction(chatError.STARWARS.INVALID_INPUT);
 
             return axios.get(customConfig.RESOLVERS.STARWARS_URL.replace('{{query}}', query))
@@ -78,7 +82,7 @@ class InteractionBarComponent extends React.Component {
               );
           }
         default:
-          return this.props.errorAction(chatError.COMMAND_NOT_SUPPRTED.replace('{{command}}', command));
+          return this.props.errorAction(chatError.COMMAND_NOT_SUPPORTED.replace('{{command}}', command));
       }
     }
 

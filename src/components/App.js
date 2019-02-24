@@ -1,9 +1,9 @@
 import React from "react";
-import "../styles/App.css";
 import ChatBox from "./ChatBox";
 import { connect } from "react-redux";
-
 import Welcome from "./Welcome";
+
+import "../styles/App.css";
 
 const AppComponent = ({ user }) => (
   <div className="app">

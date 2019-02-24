@@ -4,6 +4,8 @@ import InteractionBar from "./chat/InteractionBar";
 import UserProfile from "./chat/UserProfile";
 import { connect } from "react-redux";
 
+import "../styles/ChatBox.css";
+
 class ChatBoxComponent extends React.Component {
 	render() {
 		return <div className="chatBox">
