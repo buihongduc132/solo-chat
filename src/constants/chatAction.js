@@ -9,9 +9,38 @@ export const ACTIONS = {
   SIGNOUT: 'CHAT_ACTION_SIGNOUT',
 }
 
-export const signIn = username => {};
-export const sendMessage = message => {};
-export const botReply = content => {};
-export const displaySelfMessage = content => {};
-export const errorAction = error => {};
-export const signOut = () => {};
+export const signIn = username => ({
+  type: ACTIONS.SIGNIN,
+  data: { user: { username } }
+});
+
+export const sendMessage = message => ({
+  type: ACTIONS.CHAT,
+  data: {
+    message
+  }
+});
+
+export const botReply = content => ({
+  type: ACTIONS.REPLY,
+  message: {
+    from: CHAT_ENTITY.BOT,
+    content
+  }
+});
+export const displaySelfMessage = content => ({
+  type: ACTIONS.DISPLAY_MESSAGE,
+  message: {
+    from: CHAT_ENTITY.ME,
+    content
+  }
+})
+
+export const errorAction = error => ({
+  type: ACTIONS.ERROR,
+  error
+})
+
+export const signOut = () => ({
+  type: ACTIONS.SIGNOUT
+});
