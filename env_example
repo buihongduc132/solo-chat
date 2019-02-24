@@ -1,0 +1,2 @@
+SOLO_CHAT_RESOLVER_STARWARS_URL=https://swapi.co/api/people/?search={{query}}
+SOLO_CHAT_DEFAULT_LANG=en

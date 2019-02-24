@@ -18,7 +18,15 @@ You are free to implement the specification below however you see fit. Add any s
 
 1. Clone this repo
 2. Run `npm install`
+3. Copy `env_example` to `.env`
+4. Edit configs in `.env` base on environment
 3. Run `npm start`
+
+**Test**
+1. Run `npm test`
+
+**Run with docker**
+1. Run `docker-compose up -d`
 
 ## Create React App
 

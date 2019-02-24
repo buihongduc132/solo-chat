@@ -1,0 +1,13 @@
+version: '3'
+services:
+  solo-chat-app:
+    restart: always
+    build: .
+    ports:
+    - "3000:3000"
+    volumes:
+    - .:/app
+    environment:
+    - NODE_ENV=development
+    - SOLO_CHAT_RESOLVER_STARWARS_URL=${SOLO_CHAT_RESOLVER_STARWARS_URL}
+    command: npm start
